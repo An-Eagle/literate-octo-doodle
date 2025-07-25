@@ -10,8 +10,15 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y virt-manager steam lutris
-
+dnf5 install -y virt-manager gdm niri 
+#install Astal dependencies
+dnf5 install -y gtk4 gtk4-layer-shell gjs NetworkManager bluez wireplumber pipewire libnotify
+dnf5 -y copr enable ublue-os/staging
+dnf5 -y install bazaar fwupd
+dnf5 -y copr disable ublue-os/staging
+dnf5 -y copr enable solopasha/hyprland
+dnf5 -y install aylurs-gtk-shell2
+dnf5 -y copr disable solopasha/hyprland
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
