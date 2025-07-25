@@ -12,13 +12,15 @@ set -ouex pipefail
 # this installs a package from fedora repos
 dnf5 install -y virt-manager gdm niri 
 #install Astal dependencies
-dnf5 install -y gtk4 gtk4-layer-shell gjs NetworkManager bluez wireplumber pipewire libnotify
+dnf5 install -y dunst nwg-look.x86_64 gtk4 gtk4-layer-shell gjs NetworkManager NetworkManager-libnm-devel bluez wireplumber wireplumber-devel pipewire libnotify upower-devel libappindicator-gtk3-devel 
 dnf5 -y copr enable ublue-os/staging
 dnf5 -y install bazaar fwupd
 dnf5 -y copr disable ublue-os/staging
 dnf5 -y copr enable solopasha/hyprland
-dnf5 -y install aylurs-gtk-shell2
+dnf5 -y install aylurs-gtk-shell2 cliphist
 dnf5 -y copr disable solopasha/hyprland
+#Install Bun
+curl -fsSL https://bun.sh/install | bash
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
@@ -29,3 +31,4 @@ dnf5 -y copr disable solopasha/hyprland
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+systemctl enable gdm.service
