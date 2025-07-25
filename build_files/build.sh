@@ -20,8 +20,9 @@ dnf5 -y copr disable ublue-os/staging
 dnf5 -y copr enable solopasha/hyprland
 dnf5 -y install aylurs-gtk-shell2 cliphist nwg-look
 dnf5 -y copr disable solopasha/hyprland
-#Install Bun
-curl -fsSL https://bun.sh/install | bash
+
+
+
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
