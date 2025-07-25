@@ -10,7 +10,7 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y gdm niri 
+dnf5 install -y niri 
 #install AGS and dependencies
 dnf5 install -y dunst grim slurp gtk4 gtk4-layer-shell gjs NetworkManager NetworkManager-libnm-devel bluez wireplumber wireplumber-devel pipewire libnotify upower-devel libappindicator-gtk3-devel 
 dnf5 -y copr enable solopasha/hyprland
